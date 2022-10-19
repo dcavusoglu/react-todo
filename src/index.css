@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.items-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.5rem;
+  width: 15rem;
+  justify-content: space-between;
+}
+
+.item-completed {
+  color: gray;
+  text-decoration: line-through;
+  text-decoration-color: greenyellow;
+  text-decoration-thickness: 1.5 rem;
+}
+
+.item-waiting {
+  color: black;
+}
