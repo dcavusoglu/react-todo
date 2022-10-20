@@ -4,15 +4,23 @@ import TodoList from './components/TodoList';
 const Home = () => {
   const [todos, setTodos] = useState([])
 
-  useEffect(() => {
-    console.log(todos);
-  }, [todos])
+  const addTodo = todo => {
+    setTodos(prev => [...prev, todo])
+  }
+
+  const handleDelete = id => {
+    setTodos(prev => prev.filter(item => item.id !== id));
+  }
 
   return (
     <div>
       <h1>Home</h1>
-      <TodoForm addTodo={setTodos} todos={todos}/>
-      <TodoList todos={todos} />
+      <TodoForm addTodo={addTodo}/>
+      {
+        todos && (
+          <TodoList todos={todos} handleDelete={handleDelete}/>
+        )
+      }
     </div>
   )
 }

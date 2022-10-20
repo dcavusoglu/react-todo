@@ -1,33 +1,38 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
-const initialState = {todo:""}
 
-const TodoForm = ({addTodo, todos}) => {
-  const [form, setForm] = useState(initialState)
+const TodoForm = ({addTodo}) => {
+  const [todo, setTodo] = useState("")
 
   const handleChange = (e) => {
-    setForm({...form, [e.target.name]: e.target.value})
+    setTodo(e.target.value)
   }
 
-  useEffect(()=> {
-    setForm(initialState);
-  }, [todos])
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
+    console.log(todo);
 
-    if(form.todo === "") {
-      return false;
-    }
-    addTodo([...todos, form]);
+
+    addTodo({
+      name: todo,
+      clicked: false,
+      id: Date.now()
+    });
+    setTodo("");
+
   }
 
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input name="todo" onChange={handleChange} value={form.todo}/>
+        <input
+          name="todo"
+          onChange={handleChange}
+          value={todo.todo}
+          required
+        />
         <button>Add</button>
       </form>
     </div>

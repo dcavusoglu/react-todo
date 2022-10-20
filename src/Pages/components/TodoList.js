@@ -1,26 +1,16 @@
 import React, {useState} from 'react'
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import TodoItem from './TodoItem';
+import { SecurityUpdateGoodSharp } from '@mui/icons-material';
 
 
 
-const TodoList = ({todos}) => {
-  const [clicked, setClicked] = useState(false)
+const TodoList = ({todos, handleDelete}) => {
 
-  const handleClick = () => {
-    setClicked(curr=> !curr)
-  }
   return (
     <div className='items-container'>
-      {todos.map((item, i) =>
-      <div key={i} onClick={handleClick} className="todo-item">
-        { clicked === true ? <span><CheckCircleIcon/></span> : <span><CheckCircleOutlineIcon/></span>}
-
-        <p className={clicked ? 'item-completed' : 'item-waiting'}>{item.todo}</p>
-        <span><DeleteOutlineIcon/></span>
-        </div>
-        )}
+      {todos.sort((a, b) => b.id - a.id).map((todo) => (
+        <TodoItem key={todo.id} todo={todo} handleDelete={handleDelete}/>
+        ))}
     </div>
   )
 }
