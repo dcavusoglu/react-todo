@@ -29,8 +29,9 @@ const TodoForm = ({addTodo}) => {
       <form onSubmit={handleSubmit}>
         <input
           name="todo"
+          className='todo-input'
           onChange={handleChange}
-          value={todo.todo}
+          value={todo}
           required
         />
         <button>Add</button>

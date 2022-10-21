@@ -20,7 +20,7 @@ const TodoItem = ({todo, handleDelete}) => {
         clicked={isClicked}
         is={todo.id}
       >
-        { isClicked ?<CheckCircleIcon/> : <CheckCircleOutlineIcon/>}
+        { isClicked ?<CheckCircleIcon style={{ color: 'greenyellow' }}/> : <CheckCircleOutlineIcon/>}
       </span>
 
       <p className={isClicked ? 'item-completed' : 'item-waiting'}>{todo.name}</p>
