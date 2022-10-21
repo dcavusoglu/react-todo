@@ -24,7 +24,7 @@ h1 {
 
 .todo-input {
   border: 1px solid $purple;
-  border-radius: 1rem;
+  border-radius: 1rem 0px 0px 1rem;
 }
 
 input {
@@ -36,10 +36,12 @@ input {
 
 .submit-btn {
   background: $purple;
-  height: 2.5rem;
-  width: 3.8rem;
-  color: $light-gray;
-  border-radius: 1rem;
+  height: 3.5rem;
+  width: 4.8rem;
+  color: white;
+  font-family: $font-stack;
+  font-size: 1.5rem;
+  border-radius: 0px 1rem 1rem 0px;
   margin-left: 1.5rem;
 }
 
