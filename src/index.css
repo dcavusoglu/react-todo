@@ -1,11 +1,4 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -15,32 +8,26 @@ code {
 .items-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  margin-top: 2rem;
 }
 
 
 .todo-item {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: 1.5rem;
   width: 15rem;
   justify-content: space-between;
-
+  align-items: center;
+  font-size: 1.5rem;
 }
 
 .item-completed {
   color: gray;
   text-decoration: line-through;
   text-decoration-color: greenyellow;
-  text-decoration-thickness: 1.5 rem;
+  text-decoration-thickness: 0.2rem;
 }
 
 .item-waiting {
   color: black;
-}
-
-.todo-input {
-  color: ;
 }

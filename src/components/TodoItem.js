@@ -15,16 +15,12 @@ const TodoItem = ({todo, handleDelete}) => {
 
   return (
     <div className="todo-item">
-      <span
-        onClick={handleClick}
+        { isClicked ?<CheckCircleIcon style={{ color: 'greenyellow' }} onClick={handleClick} clicked={isClicked}/> : <CheckCircleOutlineIcon onClick={handleClick}
         clicked={isClicked}
-        is={todo.id}
-      >
-        { isClicked ?<CheckCircleIcon style={{ color: 'greenyellow' }}/> : <CheckCircleOutlineIcon/>}
-      </span>
+        id={todo.id}/>}
 
-      <p className={isClicked ? 'item-completed' : 'item-waiting'}>{todo.name}</p>
-      <span onClick={()=> handleDelete(todo.id)}><DeleteOutlineIcon/></span>
+      <span className={isClicked ? 'item-completed' : 'item-waiting'}>{todo.name}</span>
+      <DeleteOutlineIcon onClick={()=> handleDelete(todo.id)}/>
     </div>
   )
 }

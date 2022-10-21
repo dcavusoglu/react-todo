@@ -26,7 +26,7 @@ const TodoForm = ({addTodo}) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="input-container">
         <input
           name="todo"
           className='todo-input'
@@ -34,7 +34,7 @@ const TodoForm = ({addTodo}) => {
           value={todo}
           required
         />
-        <button>Add</button>
+        <button className="submit-btn">Add</button>
       </form>
     </div>
   )

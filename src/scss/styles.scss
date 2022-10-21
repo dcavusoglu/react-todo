@@ -3,7 +3,49 @@ $purple: #6C45FF;
 $dark-blue: #2E53E8;
 $light-blue: #40B3FF;
 $blue-green: #2EE8E8;
+$light-gray: #A6A6A6;
+$gray: #737373;
+
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+$font-stack: 'Patrick Hand', cursive;
+
+body {
+  margin: 0;
+  font-family: $font-stack;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 
 h1 {
   color: $purple;
+}
+
+.todo-input {
+  border: 1px solid $purple;
+  border-radius: 1rem;
+}
+
+input {
+  padding: 0.5rem;
+  color: $gray;
+  font-size: 1.5rem;
+  font-family: $font-stack;
+}
+
+.submit-btn {
+  background: $purple;
+  height: 2.5rem;
+  width: 3.8rem;
+  color: $light-gray;
+  border-radius: 1rem;
+  margin-left: 1.5rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
