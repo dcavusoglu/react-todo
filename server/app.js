@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const dotenv = require('dotenv').config();
-
+const cors = require('cors');
 const dbConncet = require('./db/connection')
 const router = require('./routes/routes');
 
@@ -11,6 +11,11 @@ const port = 5050;
 // })
 
 app.use(express.json());
+app.use(cors({
+  origin: 'http://localhost:3000'
+}))
+
+// http://localhost:5050/api/v1/tasks //get;
 
 app.use('/api/v1/tasks', router)
 

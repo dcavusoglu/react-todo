@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 
 
 const TodoForm = ({addTodo}) => {
+
   const [todo, setTodo] = useState("")
 
   const handleChange = (e) => {
@@ -16,7 +17,7 @@ const TodoForm = ({addTodo}) => {
 
     addTodo({
       name: todo,
-      clicked: false,
+      completed: false,
       id: Date.now()
     });
     setTodo("");
