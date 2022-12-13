@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import TodoForm from '../components/TodoForm';
 import TodoList from '../components/TodoList';
-import { getTasks, updateTask } from '../service/axios';
+import { addTask, getTasks, updateTask } from '../service/axios';
 
 
 const MyTasks = () => {
@@ -18,9 +18,10 @@ const MyTasks = () => {
 
 
 
-  const addTodo = todo => {
-    
-    setTodos(prev => [...prev, todo])
+  const addTodo = async todo => {
+    const newTask = await addTask(todo);
+    setTodos(prev => [...prev, newTask]);
+    getTaskList();
   }
 
   const handleClick = async todo => {
