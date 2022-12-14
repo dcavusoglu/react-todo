@@ -12,6 +12,11 @@ export const updateTask = async (id, body) => {
   return axios.patch(`${baseUrl}/${taskUrl}/${id}`, body);
 }
 
+
 export const addTask = async (body) => {
   return axios.post(`${baseUrl}/${taskUrl}`, body);
+}
+
+export const deleteTask = async (id) => {
+  return axios.delete(`${baseUrl}/${taskUrl}/${id}`);
 }
