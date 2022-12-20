@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 
-const TodoForm = ({addTodo}) => {
+const TodoForm = ({addTodo, todos}) => {
 
   const [todo, setTodo] = useState("")
 
@@ -11,6 +11,9 @@ const TodoForm = ({addTodo}) => {
 
 
   const handleSubmit = (e) => {
+    // if(todos.map(item => item.name === todo.name)){
+    //     alert('You have a task with the same name.')
+    //   }
     e.preventDefault();
     console.log(todo);
 

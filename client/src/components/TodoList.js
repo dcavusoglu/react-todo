@@ -5,7 +5,7 @@ import { SecurityUpdateGoodSharp } from '@mui/icons-material';
 
 
 
-const TodoList = ({todos, handleDelete, handleClick }) => {
+const TodoList = ({todos, handleDelete, handleUpdate }) => {
 
   // const link = 'http://localhost:5050/api/v1/tasks';
   // const [tasks, setTasks] = useState([])
@@ -18,12 +18,11 @@ const TodoList = ({todos, handleDelete, handleClick }) => {
   // useEffect (() => {
   //   getTasks();
   // }, [])
-  console.log('T', todos)
 
   return (
     <div className='items-container'>
       {todos.sort((a, b) => b.createdAt - a.createdAt).map((todo) => (
-        <TodoItem key={todo._id} todo={todo} handleClick={handleClick} handleDelete={handleDelete}/>
+        <TodoItem key={todo._id} todo={todo} handleUpdate={handleUpdate} handleDelete={handleDelete}/>
         ))}
     </div>
   )
